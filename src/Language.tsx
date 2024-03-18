@@ -4,18 +4,55 @@ import React from 'react';
 interface LanguageProps {
   langName: string;
   image: string;
+  introduction: string;
 }
 
-class Language extends React.Component<LanguageProps> {
+class Language extends React.Component<LanguageProps, { isModalOpen: boolean }> {
+  constructor(props: LanguageProps) {
+    super(props);
+    this.state = { isModalOpen: false };
+  }
+
+  handleClickLesson = () => {
+    this.setState({ isModalOpen: true });
+  }
+  
+  handleClickClose = () => {
+    this.setState({ isModalOpen: false });
+  }
+
   render() {
+    let modal: JSX.Element | null = null;
+    if (this.state.isModalOpen) {
+      modal = (
+        <div className='modal'>
+          <div className='modal-inner'>
+            <div className='modal-header'></div>
+            <div className='modal-introduction'>
+              <h2>{this.props.langName}</h2>
+              <p>{this.props.introduction}</p>
+            </div>
+            <button
+              className='modal-close-btn'
+              onClick={this.handleClickClose}
+            >
+              とじる
+            </button>
+          </div>
+        </div>
+      );
+    }
+
     return (
-      <div className='language-item'>
-        <div className='language-name'>{this.props.langName}</div>
-        <img 
-          className='language-image' 
-          src={this.props.image} 
-          alt={this.props.langName} 
-        />
+      <div className='lesson-card'>
+        <div
+          className='lesson-item'
+          onClick={this.handleClickLesson}
+        >
+          <p>{this.props.langName}</p>
+          <img src={this.props.image} alt={this.props.langName} />
+        </div>
+        {modal}
       </div>
     );
   }
