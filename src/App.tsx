@@ -48,12 +48,12 @@ const LanguageComponent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter >
         <Navbar />
         <Routes>
-          <Route path="/" element={<Top />} /> {/* デフォルトのトップページ */}
-          <Route path="/skill" element={<LanguageComponent />} />
-          <Route path="/history" element={<History />} /> 
+          <Route path="myapp/" element={<Top />} /> {/* デフォルトのトップページ */}
+          <Route path="myapp/skill" element={<LanguageComponent />} />
+          <Route path="myapp/history" element={<History />} /> 
         </Routes>
         <Footer />
       </BrowserRouter>
