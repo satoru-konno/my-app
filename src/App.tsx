@@ -51,9 +51,9 @@ const App: React.FC = () => {
       <BrowserRouter >
         <Navbar />
         <Routes>
-          <Route path="my-app/" element={<Top />} /> {/* デフォルトのトップページ */}
-          <Route path="my-app/skill" element={<LanguageComponent />} />
-          <Route path="my-app/history" element={<History />} /> 
+          <Route path="/" element={<Top />} /> {/* デフォルトのトップページ */}
+          <Route path="/skill" element={<LanguageComponent />} />
+          <Route path="/history" element={<History />} /> 
         </Routes>
         <Footer />
       </BrowserRouter>
