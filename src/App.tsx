@@ -48,7 +48,7 @@ const LanguageComponent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div>
-      <BrowserRouter >
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Top />} /> {/* デフォルトのトップページ */}
