@@ -53,7 +53,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Top />} /> {/* デフォルトのトップページ */}
           <Route path="/skill" element={<LanguageComponent />} />
-          <Route path="/history" element={<History />} />
+          <Route path="/history" element={<History />} /> 
         </Routes>
         <Footer />
       </BrowserRouter>
