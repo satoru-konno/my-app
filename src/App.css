@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 画面の高さいっぱいに表示 */
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +25,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:gray;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +62,7 @@ button {
   padding: 10px 20px;
   margin: 10px;
   font-size: 18px;
-  background-color: #007bff;
+  background-color: gray;
   color: white;
   border: none;
   border-radius: 5px;
@@ -60,7 +71,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: black;
 }
 
 html {
@@ -235,10 +246,6 @@ p {
   transition: .3s ease-in-out;
 }
 
-.footer {
-  padding: 80px 0;
-}
-
 .footer-inner {
   max-width: 1040px;
   margin: 0 auto;
@@ -266,3 +273,50 @@ p {
   display: inline-block;
   padding-left: 16px;
 }
+.nav {
+  /* 背景色設定 */
+  background-color: gray;
+}
+
+.nav ul {
+  /* 表示幅を90%に */
+  width: 90%;
+  /* フレックスボックス化 */
+  display: flex;
+  /* 先頭のポチをなくす */
+  list-style: none;
+  /* 余白の自動調整 （上下の余白は0、左右は自動調整）*/
+  margin: 0 auto;
+  /* 高さを50pxに指定 */
+  height: 50px;
+}
+
+.nav a {
+  /* アンダーライン削除 */
+  text-decoration: none;
+  /* 文字色設定 */
+  color: #fff;
+  /* 内側余白を上右下左の順で設定 */
+  padding: 10px 20px 10px 0px;
+  /*ブロックにする */
+  display: block;
+  /* 文字を大き目に設定 */
+  font-size: large;
+}
+
+.nav a:hover {
+  /* マウスオーバーした時の文字色を設定 */
+  color: #aaa;
+}
+.footer {
+  height: 50px; /* 適切な高さに調整 */
+  background-color: #666;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* フッターをページの幅いっぱいに広げる */
+}
+
